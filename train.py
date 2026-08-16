@@ -1,4 +1,5 @@
-"""General-purpose training script for image-to-image translation.
+"""
+General-purpose training script for image-to-image translation.
 
 This script works for various models (with option '--model': e.g., pix2pix, cyclegan, colorization) and
 different datasets (with option '--dataset_mode': e.g., aligned, unaligned, single, colorization).
@@ -18,7 +19,6 @@ See options/base_options.py and options/train_options.py for more training optio
 See training and test tips at: https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix/blob/master/docs/tips.md
 See frequently asked questions at: https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix/blob/master/docs/qa.md
 """
-
 import time
 from options.train_options import TrainOptions
 from data import create_dataset
@@ -83,5 +83,4 @@ if __name__ == "__main__":
             model.save_networks(epoch)
 
         print(f"End of epoch {epoch} / {opt.n_epochs + opt.n_epochs_decay} \t Time Taken: {time.time() - epoch_start_time:.0f} sec")
-
     cleanup_ddp()
